@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import StopwatchContainer from './stopwatch.container';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your App!</Text>
-      <Text>AL FIN!!</Text>
-      <Text>Funciona, que locura!!!</Text>
+      <Text style={styles.title}>Welcome to my StopWatch</Text>
+      <StopwatchContainer />
       <StatusBar style="auto" />
-
     </View>
   );
 }
@@ -16,8 +15,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    display:'flex',
+    backgroundColor: 'DBD053',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop:'8%',
   },
+
+  title: {
+    fontSize: 30,
+    color: '#74526C',
+    marginBottom:'8%'
+  }
 });
