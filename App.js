@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     display:'flex',
-    backgroundColor: 'DBD053',
+    backgroundColor: '#DBD053',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingTop:'8%',
+    paddingTop:'15%',
   },
 
   title: {
