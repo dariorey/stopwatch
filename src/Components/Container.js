@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
+import ListComponent from './List'
 
-let padToTwo = number => (number <= 9 ? `0${number}`: number)
+let padToTwo = (number) => (number <= 9 ? `0${number}`: number);
 
 class StopwatchContainer extends Component{
     constructor(props){
@@ -65,8 +66,6 @@ class StopwatchContainer extends Component{
             min: 0,
             sec: 0,
             msec: 0,
-
-            start: false
         })
 
         clearInterval(this.interval)
@@ -89,10 +88,11 @@ class StopwatchContainer extends Component{
                     <TouchableOpacity style={styles.button} onPress={this.handleToggle}>
                         <Text style={styles.buttonText}>{!this.state.start? 'Start':'Stop'}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} onPress={() => this.handleLap(this.state.min, this.state.sec, this.state.msec)} disabled={!this.state.start}>
+                    <TouchableOpacity style={{...styles.button, opacity: !this.state.start ? 0.75 : 1}} onPress={() => this.handleLap(this.state.min, this.state.sec, this.state.msec)} disabled={!this.state.start}>
                         <Text style={styles.buttonText}>Lap</Text>
                     </TouchableOpacity>
                 </View>
+                <ListComponent lap={this.lapArr} />
             </View>
         )
     }
